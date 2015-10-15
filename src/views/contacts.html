@@ -1,0 +1,36 @@
+<!-- Contacts list -->
+<h2 class="page-header text-center">List of contacts</h2>
+<p class="text-center">
+  <a ui-sref="add" class="btn btn-lg btn-outline">Add Contact</a>
+</p>
+<div class="list-msg" ng-show="contactList.length==0">
+    No Contacts Found.
+</div>
+<ul class="media-list row contacts-container">
+  <li ng-repeat="contact in contactList" class="media col-md-6 col-lg-4">
+    <div class="thumbnail">
+      <img class="media-object" src="assets/images/{{contact.id}}.jpg">
+    </div>
+    <div class="media-heading">
+      <h3>
+        {{contact.name}}
+        <small>
+          <a ui-sref="edit({ id: contact.id })"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="delete-contract" ng-click="deleteContact(contact.id)">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+        </small>
+      </h3>
+    </div>
+    <div class="media-body">
+      <dl>
+        <dt>Phone Number:</dt>
+        <dd>{{contact.tel}}</dd>
+        <dt>Email:</dt>
+        <dd class="email-txt">{{contact.email}}</dd>
+      </dl>
+    </div>
+    <hr>
+  </li>
+</ul>
+<!-- end contacts page -->

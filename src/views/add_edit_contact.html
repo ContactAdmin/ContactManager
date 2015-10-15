@@ -1,0 +1,29 @@
+<h2 class="page-header text-center">{{mode === "add" ? "Create" : "Edit"}} Contact</h2>
+<form role="form" class="form-horizontal contract-form" ng-model="contactForm" ng-submit="submitContact()">
+  <div class="form-group">
+    <label class="col-sm-4 control-label"><span class="asterisk">*</span> Full name:</label>
+    <div class="col-sm-6">
+      <input type="text" ng-model="contactForm.name" class="form-control contact-name-input" required value="{{contactForm.name}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 control-label"><span class="asterisk">*</span> Email address:</label>
+    <div class="col-sm-6">
+      <input type="email" ng-model="contactForm.email" class="form-control contact-email-input" required value="{{contactForm.email}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 control-label"><span class="asterisk">*</span> Telephone number:</label>
+    <div class="col-sm-6">
+      <input type="tel" ng-model="contactForm.tel" class="form-control contact-tel-input" required value="{{contactForm.tel}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-3">
+      <button type="submit" class="btn btn-outline btn-lg btn-block">Submit</button>
+    </div>
+    <div class="col-sm-3">
+      <a ui-sref="contacts" class="btn btn-outline btn-lg btn-block">Cancel</a>
+    </div>
+  </div>
+</form>
